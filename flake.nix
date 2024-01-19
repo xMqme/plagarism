@@ -68,33 +68,33 @@
     };
   };
 
-  outputs =
-    { self
-    , nixpkgs
-    , home-manager
-    , ...
-    } @ inputs: {
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
-      nixosConfigurations = {
-        # Run the following command in the flake's directory to
-        # deploy this configuration on any NixOS system:
-        #   sudo nixos-rebuild switch --flake .#nixos-test
-        "glazepc" = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          system = "x86_64-linux";
-          modules = [
-            ./configurations/glazepc
-            ./system/core
-            inputs.home-manager.nixosModules.default
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.users.nixer = import ./home;
-            }
-            inputs.hyprland.nixosModules.default
-          ];
-        };
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: {
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+    nixosConfigurations = {
+      # Run the following command in the flake's directory to
+      # deploy this configuration on any NixOS system:
+      #   sudo nixos-rebuild switch --flake .#nixos-test
+      "glazepc" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        system = "x86_64-linux";
+        modules = [
+          ./configurations/glazepc
+          ./system/core
+          inputs.home-manager.nixosModules.default
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = {inherit inputs;};
+            home-manager.users.nixer = import ./home;
+          }
+          inputs.hyprland.nixosModules.default
+        ];
       };
     };
+  };
 }

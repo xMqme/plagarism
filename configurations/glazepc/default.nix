@@ -9,13 +9,14 @@
     ./hardware-configuration.nix
     ../../system/gaming
     ../../system/wayland
+    ../../system/amd
   ];
   powerManagement = {
     cpuFreqGovernor = "performance";
   };
   # networking, firewall, and hostname
   networking = {
-    hostName = "glazepc";
+    hostName = "elliotpc";
     networkmanager.enable = true;
     firewall.enable = true;
     enableIPv6 = false;
