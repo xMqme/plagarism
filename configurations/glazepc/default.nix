@@ -7,7 +7,6 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../system/novideo
     ../../system/gaming
     ../../system/wayland
   ];
@@ -16,7 +15,7 @@
   };
   # networking, firewall, and hostname
   networking = {
-    hostName = "eeloo";
+    hostName = "glazepc";
     networkmanager.enable = true;
     firewall.enable = true;
     enableIPv6 = false;

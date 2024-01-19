@@ -1,26 +1,21 @@
 {
   config,
   pkgs,
-  inputs,
-  lib,
   ...
 }: {
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = ["kvm-intel"];
     supportedFilesystems = ["ntfs"];
+    initrd.kernelModules = [ "amdgpu" ];
     loader = {
-      systemd-boot.enable = lib.mkForce false;
+      systemd-boot.enable = false;
       efi.canTouchEfiVariables = true;
     };
-    lanzaboote = {
+    grub = {
       enable = true;
-      pkiBundle = "/etc/secureboot";
+      devices = ["nodev"];
+      efiSupport = true;
+      useOSprober = true;
     };
   };
-  environment.systemPackages = [
-    inputs.nh.packages.${pkgs.system}.default
-    inputs.lanzaboote.packages.${pkgs.system}.lzbt
-    inputs.lanzaboote.packages.${pkgs.system}.stub
-  ];
 }
