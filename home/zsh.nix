@@ -13,7 +13,7 @@
         path = "/home/nixer/.config/zsh/histfile";
       };
       shellAliases = {
-        rebuild = "cd /home/nixer/caernixeron && ${inputs.nh.packages.${pkgs.system}.default}/bin/nh os switch .";
+        rebuild = "cd /home/nixer/plagarism && ${inputs.nh.packages.${pkgs.system}.default}/bin/nh os switch .";
       };
       plugins = [
         {
