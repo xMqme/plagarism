@@ -24,9 +24,14 @@
       name = "Torus";
     };
     theme = {
-      name = "Gruvbox-Dark-BL";
-      package = pkgs.gruvbox-gtk-theme;
+      name = "Catppuccin-Mocha-Compact-Pink-Dark";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "pink" ];
+        size = "compact";
+        tweaks = [ "rimless" "black" ];
+        variant = "mocha";
+      };
     };
   };
-  home.sessionVariables.GTK_THEME = "Gruvbox-Dark-BL";
+  home.sessionVariables.GTK_THEME = "catppuccin-mocha";
 }

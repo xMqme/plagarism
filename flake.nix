@@ -66,6 +66,9 @@
       url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    skibidivim = {
+      url = "github:caernarferon/skibidivim";
+    };
   };
 
   outputs = {
@@ -79,11 +82,11 @@
       # Run the following command in the flake's directory to
       # deploy this configuration on any NixOS system:
       #   sudo nixos-rebuild switch --flake .#nixos-test
-      "glazepc" = nixpkgs.lib.nixosSystem {
+      "elliotpc" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         system = "x86_64-linux";
         modules = [
-          ./configurations/glazepc
+          ./configurations/elliotpc
           ./system/core
           inputs.home-manager.nixosModules.default
           {

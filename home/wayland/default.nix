@@ -25,6 +25,7 @@
     wlogout
     swww
     grim
+    grimblast
     slurp
     networkmanagerapplet
   ];

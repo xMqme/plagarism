@@ -21,7 +21,7 @@
       ];
 
       width.fraction = 0.3;
-      y.absolute = 0;
+      y.fraction = 0.075;
       hidePluginInfo = true;
       closeOnClick = true;
       maxEntries = 7;

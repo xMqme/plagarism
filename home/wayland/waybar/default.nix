@@ -36,7 +36,7 @@
             };
           };
           "image" = {
-            path = "/home/lily/waybar/nixos_dark.svg";
+            path = "/home/nixer/.config/waybar/nixos_dark.svg";
           };
           "privacy" = {
             icon-spacing = 4;

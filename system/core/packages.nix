@@ -9,6 +9,7 @@
     xdg-user-dirs
     gruvbox-dark-gtk
     tealdeer
+    vinegar
     (pkgs.discord.override {
       withOpenASAR = true;
       withVencord = true;
@@ -29,6 +30,8 @@
     pavucontrol
     gnome.nautilus
     htop
+    firefox
+    neovim
   ];
   programs = {
     wireshark.enable = true;
