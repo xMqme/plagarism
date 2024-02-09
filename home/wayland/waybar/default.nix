@@ -29,10 +29,10 @@
             format = "{player_icon} {title} - {artist}";
             format-paused = "{status_icon} {title} - {artist}";
             player-icons = {
-              "default" = " ";
+              "default" = "⏸ ";
             };
             status-icons = {
-              "paused" = "⏸";
+              "paused" = " ";
             };
           };
           "image" = {
@@ -106,6 +106,8 @@
             tooltip-format = "{volume}";
             format-muted = "  Muted";
             on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+	    on-scroll-up = "wpctl set-volume @DEFAULT_SINK@ 0.01+";
+	    on-scroll-down = "wpctl set-volume @DEFAULT_SINK@ 0.01-";
             format-icons = ["" "" ""];
           };
           "custom/power" = {

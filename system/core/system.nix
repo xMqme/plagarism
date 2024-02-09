@@ -12,7 +12,7 @@
   };
   environment.variables = {
     EDITOR = "nvim";
-    BROWSER = "google-chrome";
+    BROWSER = "firefox";
   };
   environment.systemPackages = with pkgs; [
     appimage-run

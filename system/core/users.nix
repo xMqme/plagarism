@@ -4,17 +4,7 @@
   ...
 }: {
   users = {
-    motd = ''
-       _____
-      < moo >
-      -----
-              \   ^__^
-               \  (oo)\_______
-                  (__)\       )\/\
-                      ||----w |
-                      ||     ||
-
-    '';
+    motd = ''pls fix'';
     users.nixer = {
       isNormalUser = true;
       description = "nixer";

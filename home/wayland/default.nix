@@ -23,6 +23,8 @@
     gnome3.gnome-control-center
     gnome3.gnome-settings-daemon
     wlogout
+    swaylock
+    swayidle
     swww
     grim
     grimblast
